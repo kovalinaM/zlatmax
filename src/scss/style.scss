@@ -1,0 +1,212 @@
+//файл обнуляющих стилей
+@import "nullstyle.scss";
+
+
+//Подключение шрифтов
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700&display=swap');
+/*========================================*/
+//Функции rem  и em
+$fz: 16;
+
+@function rem($size) {
+    $remSize: calc($size / $fz);
+    @return $remSize * 1rem;
+}
+
+@function em($size, $parSize) {
+    $emSize: calc($size / $parSize);
+    @return $emSize * 1em;
+}
+
+//Для расчета % значения
+@function percent($value1, $value2) {
+    $percentValue: calc($value1 / $value2 * 100%);
+    @return $percentValue;
+}
+
+/*===========================================*/
+
+//Шрифт по умолчанию
+$fontFamily: 'Montserrat', sans-serif;
+$fontSize: rem(18);
+
+//Основные цвета
+$mainColor: #000; //цвет шрифта
+$backgroundColor: #F5F5F5;
+
+
+
+/*=======Настройка адптивной сетки============-*/
+
+//Минимальная ширина страницы
+$minWidth: 320;
+//Ширина полотна (макета)
+$maxWidth: 1440;
+//Ширина ограничивающего контейнера
+$maxWidthContainer: 1300;
+//Общий отступ у контейнера
+$containerPadding: 40;
+
+//Ширина срабатывания первого брейкпойнта
+$containerWidth: $maxWidthContainer + $containerPadding;
+
+//Брейк-пойнты
+$pc: em($containerWidth, $fz); //ПК, ноутбуку, некоторые планшеты в горизонтальном положении
+$tablet: em(991.98, $fz); // Плантшеты нектооые тедефоны в горизонтальном положении
+$mobile: em(767.98, $fz); // Телефоны L
+$mobileSmall: em(479.98, $fz); //Телефоны
+
+//Тип адаптива
+//1 = отзывчивыость (у контейнера нет брейкпойнтов)
+//2 = по брейк-пойнам ( контейнер меняет свою ширину по брейк-пойнтам)
+$responsiveType: 1;
+
+
+//Mixin 
+// @mixin adaptiveValue($type, $maxtSize,  $minSize){
+
+
+// }
+
+/*===============Ограничивающий контейнер======================*/
+
+/*Стили будут применяться дл всех классов содержащих *__container 
+Например, header__container 
+*/
+
+@if ($responsiveType==1) {
+    //отзывчивая
+    [class*="__container"] {
+        @if ($maxWidthContainer>0) {
+            max-width: rem($containerWidth);
+            margin: 0 auto;
+            min-height: 100%;
+            width: 100%;
+        }
+        @if ($containerPadding>0) {
+            @if ($maxWidthContainer>0) {
+                padding: 0 rem(calc($containerPadding / 2));
+            } 
+        }
+    }
+} @else {
+    //по брейк-поинтам
+    [class*="__container"] {
+        margin: 0 auto;
+        @if ($maxWidthContainer>0) {
+            max-width: rem($maxWidthContainer);
+            box-sizing: content-box;
+        } @else {
+            @if ($containerPadding>0){
+                padding: 0 rem(math.div($containerPadding, 2));
+            }
+        }
+        @media(max-width: $pc) {
+            max-width: rem(970);
+        }
+    }
+}
+
+/*Стили будут применяться для всех классов *-ibg. Например, main__image-ibg*/
+// [class*="-ibg"] {
+//     position: relative;
+//     img {
+//         position: absolute;
+//         width: 100%;
+//         height: 100%;
+//         top: 0;
+//         left: 0;
+//         object-fit: cover;
+//     }
+// }
+
+
+// Стили иконки меню Burger
+// .icon-menu{
+//     display: none;
+//     @media(max-width: $mobile){
+//         display: block;
+//         position: relative;
+//         width: rem(30);
+//         height: rem(30);
+//         border-radius: 50%;
+//         background-color: $greenColor;
+//         flex: 0 0 rem(30);
+//         z-index: 5;
+//         @media (any-hover: none) {
+//             cursor: default;
+//         }
+//         span, 
+//         &::before,
+//         &::after {
+//             content: "";
+//             transition: all 0.3s ease 0s;
+//             right: rem(7);
+//             position: absolute;
+//             height: rem(1);
+//             background-color: #fff;
+//         }
+
+//         &::before,
+//         &::after {
+//             width: 53.334%;
+//         }
+
+//         &::before {
+//             top: rem(10);
+//         }
+
+//         &::after {
+//             bottom: rem(10);
+//         }
+
+//         span{
+//             width: 39.75%;
+//             top: calc(50% - 1px);
+//         }
+//     }
+// }
+
+// .icon-menu.menu-open{
+//     span {
+//         width: 0
+//     }
+
+//     &::before,
+//     &::after {
+//     }
+
+//     &::before{
+//         top: calc(50% - rem(1));
+//         transform: rotate(-45deg);
+//     }
+
+//     &::after {
+//         bottom: calc(50% - rem(1));
+//         transform: rotate(45deg);
+//     }
+// }
+
+
+// .hidden {
+//     display: none;
+// }
+
+/*-------------------------------*/
+body{
+    font-family: $fontFamily;
+    color: $mainColor;
+    font-weight: 500;
+    .lock & {
+        overflow: hidden;
+        touch-action: none;
+    }
+}
+
+/*====Оболочка==========================*/
+.wrapper {
+    min-height: 100%;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;    
+}
