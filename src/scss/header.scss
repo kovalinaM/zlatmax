@@ -1,0 +1,100 @@
+
+//Стили иконки меню Burger
+.icon-menu{
+    display: none;
+    @media(max-width: $mobile){
+        display: block;
+        position: relative;
+        width: rem(30);
+        height: rem(30);
+        border-radius: 50%;
+        background-color: $mainColor;
+        flex: 0 0 rem(30);
+        z-index: 5;
+        @media (any-hover: none) {
+            cursor: default;
+        }
+        span, 
+        &::before,
+        &::after {
+            content: "";
+            transition: all 0.3s ease 0s;
+            right: rem(7);
+            position: absolute;
+            height: rem(1);
+            background-color: #fff;
+        }
+
+        &::before,
+        &::after {
+            width: 53.334%;
+        }
+
+        &::before {
+            top: rem(10);
+        }
+
+        &::after {
+            bottom: rem(10);
+        }
+
+        span{
+            width: 39.75%;
+            top: calc(50% - 1px);
+        }
+    }
+}
+
+.icon-menu.menu-open{
+    span {
+        width: 0
+    }
+
+    &::before,
+    &::after {
+    }
+
+    &::before{
+        top: calc(50% - rem(1));
+        transform: rotate(-45deg);
+    }
+
+    &::after {
+        bottom: calc(50% - rem(1));
+        transform: rotate(45deg);
+    }
+}
+/*===============================*/
+.header {
+
+
+    &__top {
+    }
+}
+.top-header {
+    &__container{
+        
+    }
+
+    &__menu {
+    }
+
+    &__user {
+    }
+}
+.menu {
+}
+.top-menu {
+
+    &__body {
+    }
+
+    &__list {
+    }
+
+    &__item {
+    }
+
+    &__link {
+    }
+}
