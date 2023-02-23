@@ -3,6 +3,8 @@
 
 
 //Подключение шрифтов
+@import "fonts/icons.scss";
+@import "fonts/fonts.scss";
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700&display=swap');
 /*========================================*/
 //Функции rem  и em
@@ -41,11 +43,11 @@ $backgroundColor: #F5F5F5;
 //Минимальная ширина страницы
 $minWidth: 320;
 //Ширина полотна (макета)
-$maxWidth: 1440;
+$maxWidth: 1920;
 //Ширина ограничивающего контейнера
-$maxWidthContainer: 1300;
+$maxWidthContainer: 1590;
 //Общий отступ у контейнера
-$containerPadding: 40;
+$containerPadding: 30;
 
 //Ширина срабатывания первого брейкпойнта
 $containerWidth: $maxWidthContainer + $containerPadding;
@@ -104,9 +106,23 @@ $responsiveType: 1;
         @media(max-width: $pc) {
             max-width: rem(970);
         }
+        @media(max-width: $tablet) {
+            max-width: rem(750);
+        }
+        @media(max-width: $mobile) {
+            max-width: none;
+            @if ($containerPadding > 0 and $maxWidthContainer>0) {
+                padding: 0 rem(math.div($containerPadding, 2));
+            }
+        }
     }
 }
+/*========Подключение стилей================*/
+@import "header";
+@import "footer";
 
+@import "base";
+@import "common";
 /*Стили будут применяться для всех классов *-ibg. Например, main__image-ibg*/
 // [class*="-ibg"] {
 //     position: relative;
@@ -121,71 +137,6 @@ $responsiveType: 1;
 // }
 
 
-// Стили иконки меню Burger
-// .icon-menu{
-//     display: none;
-//     @media(max-width: $mobile){
-//         display: block;
-//         position: relative;
-//         width: rem(30);
-//         height: rem(30);
-//         border-radius: 50%;
-//         background-color: $greenColor;
-//         flex: 0 0 rem(30);
-//         z-index: 5;
-//         @media (any-hover: none) {
-//             cursor: default;
-//         }
-//         span, 
-//         &::before,
-//         &::after {
-//             content: "";
-//             transition: all 0.3s ease 0s;
-//             right: rem(7);
-//             position: absolute;
-//             height: rem(1);
-//             background-color: #fff;
-//         }
-
-//         &::before,
-//         &::after {
-//             width: 53.334%;
-//         }
-
-//         &::before {
-//             top: rem(10);
-//         }
-
-//         &::after {
-//             bottom: rem(10);
-//         }
-
-//         span{
-//             width: 39.75%;
-//             top: calc(50% - 1px);
-//         }
-//     }
-// }
-
-// .icon-menu.menu-open{
-//     span {
-//         width: 0
-//     }
-
-//     &::before,
-//     &::after {
-//     }
-
-//     &::before{
-//         top: calc(50% - rem(1));
-//         transform: rotate(-45deg);
-//     }
-
-//     &::after {
-//         bottom: calc(50% - rem(1));
-//         transform: rotate(45deg);
-//     }
-// }
 
 
 // .hidden {

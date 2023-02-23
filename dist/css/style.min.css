@@ -1,6 +1,276 @@
-body {
-  background-color: #000;
+@charset "UTF-8";
+/*Обнуление стилей*/
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700&display=swap");
+* {
+  padding: 0;
+  margin: 0;
+  border: 0;
 }
-body span {
-  color: green;
+
+*,
+*:before,
+*:after {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+:focus,
+:active {
+  outline: none;
+}
+
+a:focus,
+a:active {
+  outline: none;
+}
+
+nav,
+footer,
+header,
+aside {
+  display: block;
+}
+
+html,
+body {
+  height: 100%;
+  width: 100%;
+  font-size: 100%;
+  line-height: 1;
+  font-size: 16px;
+  -ms-text-size-adjust: 100%;
+  -moz-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+}
+
+input,
+button,
+textarea {
+  font-family: inherit;
+}
+
+input::-ms-clear {
+  display: none;
+}
+
+button {
+  cursor: pointer;
+}
+
+button::-moz-focus-inner {
+  padding: 0;
+  border: 0;
+}
+
+a {
+  color: inherit;
+}
+
+a,
+a:visited {
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+ul li {
+  list-style: none;
+}
+
+img {
+  vertical-align: top;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-size: inherit;
+  font-weight: 400;
+}
+
+/*------------------*/
+[class*=_icon-]:before {
+  font-family: "icons";
+  font-weight: normal;
+  font-style: normal;
+  font-variant: normal;
+  text-decoration: none;
+  line-height: 1;
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+[class*=_icon-]:before {
+  display: block;
+}
+
+._icon-arrow-bottom:before {
+  content: "\e900";
+}
+
+._icon-cart:before {
+  content: "\e901";
+}
+
+._icon-compare:before {
+  content: "\e902";
+}
+
+._icon-favourite:before {
+  content: "\e903";
+}
+
+._icon-footer-clock:before {
+  content: "\e904";
+}
+
+._icon-footer-location:before {
+  content: "\e905";
+}
+
+._icon-footer-mail:before {
+  content: "\e906";
+}
+
+._icon-footer-phone:before {
+  content: "\e907";
+}
+
+._icon-location:before {
+  content: "\e908";
+}
+
+._icon-logo:before {
+  content: "\e909";
+}
+
+._icon-rub:before {
+  content: "\e90a";
+}
+
+._icon-search:before {
+  content: "\e90b";
+}
+
+._icon-spoiler-arrow:before {
+  content: "\e90c";
+}
+
+._icon-user:before {
+  content: "\e90d";
+}
+
+@font-face {
+  font-family: "icons";
+  font-display: swap;
+  src: url("../fonts/icons.woff2") format("woff2"), url("../fonts/icons.woff") format("woff");
+  font-weight: 400;
+  font-style: normal;
+}
+/*========================================*/
+/*===========================================*/
+/*=======Настройка адптивной сетки============-*/
+/*===============Ограничивающий контейнер======================*/
+/*Стили будут применяться дл всех классов содержащих *__container 
+Например, header__container 
+*/
+[class*=__container] {
+  max-width: 101.25rem;
+  margin: 0 auto;
+  min-height: 100%;
+  width: 100%;
+  padding: 0 0.9375rem;
+}
+
+/*========Подключение стилей================*/
+.icon-menu {
+  display: none;
+}
+@media (max-width: 47.99875em) {
+  .icon-menu {
+    display: block;
+    position: relative;
+    width: 1.875rem;
+    height: 1.875rem;
+    border-radius: 50%;
+    background-color: #000;
+    flex: 0 0 1.875rem;
+    z-index: 5;
+  }
+}
+@media (max-width: 47.99875em) and (any-hover: none) {
+  .icon-menu {
+    cursor: default;
+  }
+}
+@media (max-width: 47.99875em) {
+  .icon-menu span, .icon-menu::before, .icon-menu::after {
+    content: "";
+    transition: all 0.3s ease 0s;
+    right: 0.4375rem;
+    position: absolute;
+    height: 0.0625rem;
+    background-color: #fff;
+  }
+}
+@media (max-width: 47.99875em) {
+  .icon-menu::before, .icon-menu::after {
+    width: 53.334%;
+  }
+}
+@media (max-width: 47.99875em) {
+  .icon-menu::before {
+    top: 0.625rem;
+  }
+}
+@media (max-width: 47.99875em) {
+  .icon-menu::after {
+    bottom: 0.625rem;
+  }
+}
+@media (max-width: 47.99875em) {
+  .icon-menu span {
+    width: 39.75%;
+    top: calc(50% - 1px);
+  }
+}
+
+.icon-menu.menu-open span {
+  width: 0;
+}
+.icon-menu.menu-open::before {
+  top: calc(50% - 0.0625rem);
+  transform: rotate(-45deg);
+}
+.icon-menu.menu-open::after {
+  bottom: calc(50% - 0.0625rem);
+  transform: rotate(45deg);
+}
+
+/*===============================*/
+/*Стили будут применяться для всех классов *-ibg. Например, main__image-ibg*/
+/*-------------------------------*/
+body {
+  font-family: "Montserrat", sans-serif;
+  color: #000;
+  font-weight: 500;
+}
+.lock body {
+  overflow: hidden;
+  touch-action: none;
+}
+
+/*====Оболочка==========================*/
+.wrapper {
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
 }
