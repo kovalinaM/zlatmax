@@ -1,7 +1,13 @@
 import * as flsFunctions from "./modules/functions.js";
 
-flsFunctions.isWeb();
+flsFunctions.menuInit();
+flsFunctions.spollers();
+flsFunctions.initPopups();
 
-import Swiper, { Navigation, Pagination } from 'swiper';
 
-const swiper = new Swiper();
+// flsFunctions.isWeb();
+
+
+// import Swiper, { Navigation, Pagination } from 'swiper';
+
+// const swiper = new Swiper();
