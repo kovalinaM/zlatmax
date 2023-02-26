@@ -4,6 +4,8 @@ flsFunctions.menuInit();
 flsFunctions.spollers();
 flsFunctions.initPopups();
 
+import "./files/script.js";
+
 
 // flsFunctions.isWeb();
 
