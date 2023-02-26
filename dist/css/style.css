@@ -376,6 +376,13 @@ h6 {
     margin: 0 0.625rem 0 0;
   }
 }
+.actions-header__favourite {
+  font-size: 1.6875rem;
+}
+.actions-header__cart {
+  flex: 0 0 auto;
+}
+
 .phones-header__item {
   position: relative;
   display: flex;
@@ -415,6 +422,45 @@ h6 {
   color: #e8aa31;
 }
 
+.cart-header {
+  display: flex;
+  align-items: center;
+  column-gap: 0.9375rem;
+}
+.cart-header__icon {
+  flex: 0 0 37px;
+  font-size: 2.1875rem;
+  position: relative;
+}
+.cart-header__icon span {
+  position: absolute;
+  font-size: 0.4375rem;
+  background-color: #e8aa31;
+  color: #fff;
+  width: 0.875rem;
+  height: 0.875rem;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  top: 0;
+  right: 0;
+}
+.cart-header__body {
+  font-size: 1rem;
+  line-height: 125%;
+}
+.cart-header__summ {
+  font-weight: 500;
+}
+.cart-header__summ:not(:last-child) {
+  margin-bottom: 0.3125em;
+}
+.cart-header__link {
+  color: #e8aa31;
+  white-space: nowrap;
+}
+
 .popup {
   position: fixed;
   width: 100%;
@@ -443,6 +489,7 @@ h6 {
 .popup__content {
   background-color: #fff;
   border-radius: 1.25rem;
+  padding: 1.875rem 0.625rem;
   position: relative;
   transition: all 0.8s ease 0s;
   opacity: 0;
@@ -450,9 +497,9 @@ h6 {
 }
 .popup__close {
   position: absolute;
-  right: 1.875rem;
-  top: 1.875rem;
-  font-size: 1.875rem;
+  right: 1.25rem;
+  top: 1.25rem;
+  font-size: 1.25rem;
   font-weight: 400;
   text-decoration: none;
 }

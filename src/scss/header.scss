@@ -215,9 +215,11 @@
     }
 
     &__favourite {
+        font-size: rem(27);
     }
 
     &__cart {
+        flex: 0 0 auto;
     }
 }
 
@@ -238,7 +240,7 @@
     }
 
     &__arrow {
-        color: #e8aa31;
+        color: $mainOrange;
         font-size: rem(10);
         margin: 0 0 0 em(17,16);
         transition: transform 0.5s ease;
@@ -268,22 +270,50 @@
         margin: rem(3) 0 0 0;
         font-weight: 700;
         line-height: percent(22, 18);
-        color: #e8aa31;
+        color: $mainOrange;
     }
 }
 
 .cart-header {
+    display: flex;
+    align-items: center;
+    column-gap: rem(15);
 
     &__icon {
+        flex: 0 0 37px;
+        font-size: rem(35);
+        position: relative;
+        span {
+            position: absolute;
+            font-size: rem(7);
+            background-color: $mainOrange;
+            color: #fff;
+            width:rem(14);
+            height: rem(14);
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            top: 0;
+            right: 0;
+        }
     }
 
     &__body {
+        font-size: rem(16);
+        line-height: percent(20 ,16); 
     }
 
     &__summ {
+        font-weight: 500;
+        &:not(:last-child) {
+            margin-bottom: em(5, 16);
+        }
     }
 
     &__link {
+        color: $mainOrange;
+        white-space: nowrap;
     }
 }
 
