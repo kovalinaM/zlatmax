@@ -26,6 +26,7 @@
     &__content {
         background-color: #fff;
         border-radius: rem(20);
+        padding: rem(30) rem(10);
         position: relative;
         transition: all 0.8s ease 0s;
         opacity: 0;
@@ -34,9 +35,9 @@
 
     &__close {
         position: absolute;
-        right: rem(30);
-        top: rem(30);
-        font-size: rem(30); 
+        right: rem(20);
+        top: rem(20);
+        font-size: rem(20); 
         font-weight: 400;
         text-decoration: none;
         @media(max-width: $mobile) {
