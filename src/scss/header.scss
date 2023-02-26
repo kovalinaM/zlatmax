@@ -66,11 +66,17 @@
 /*===============================*/
 .header {
     &__top {
-        background-color: $mainDarkColor;
-        color: #fff;
+    }
+
+    &__body {
+    }
+
+    &__catalog {
     }
 }
 .top-header {
+    background-color: $mainDarkColor;
+    color: #fff;
     padding: 10px 0;
     &__container{
         display: flex;
@@ -91,6 +97,13 @@
         &::before {
             font-size: rem(28);
             margin-right: em(15, 28);
+        }
+        span{
+            @media(any-hover: hover) {
+                &:hover {
+                    text-decoration: underline;
+                }
+            }
         }
     }
 }
@@ -116,16 +129,17 @@
     &__link {
         font-size: rem(16);
         line-height: percent(20, 16);
+        @media(any-hover: hover) {
+            &:hover {
+                text-decoration: underline;
+            }
+        }
     }
 }
 
 
 /*=========================*/
-.header {
 
-    &__body {
-    }
-}
 .body-header {
     padding: rem(10) 0;
     background-color: #ecf1f2;
@@ -209,6 +223,13 @@
                 margin: 0 rem(10) 0 0;
             }
         }
+        span{
+            @media(any-hover: hover) {
+                &:hover {
+                    text-decoration: underline;
+                }
+            }
+        }
     }
 
     &__phones {
@@ -254,11 +275,12 @@
         width: 100%;
         top: 100%;
         left: 0;
-        margin: rem(3) 0 0 0;
+        margin: 0;
         background-color: #fff;
         padding: rem(15);
         box-shadow: 0 0 5px rgba(0,0,0,0.2);
         border-radius: rem(10);
+        z-index: 50;
         li {
             &:not(:last-child) {
                 margin-bottom: em(8, 18);
@@ -271,6 +293,11 @@
         font-weight: 700;
         line-height: percent(22, 18);
         color: $mainOrange;
+        @media(any-hover: hover) {
+            &:hover {
+                text-decoration: underline;
+            }
+        }
     }
 }
 
@@ -314,6 +341,146 @@
     &__link {
         color: $mainOrange;
         white-space: nowrap;
+        @media(any-hover: hover) {
+            &:hover {
+                text-decoration: underline;
+            }
+        }
     }
 }
+
+/*=========================================*/
+
+.catalog-header {
+    background-color: $mainDarkColor;
+    color: #fff;
+    position: relative;
+
+    &__container {
+        
+    }
+
+    &__menu {
+    }
+}
+
+.menu-catalog {
+
+    &__list {
+        display: flex;
+        justify-content: space-between;
+        gap: rem(10);
+    }
+
+    &__item {
+    }
+
+    &__link {
+        min-height: rem(70);
+        padding: 0 rem(10);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        position: relative;
+        transition: color 0.3s ease;
+        &::after{
+            content: "";
+            position: absolute;
+            opacity: 0;
+            visibility: hidden;
+            bottom: 0;
+            left: rem(10);
+            height: 1px;
+            background-color: $mainOrange;
+            width: calc(100% - rem(20));
+            transition: all 0.3s ease;
+        }
+        @media(any-hover: hover) {
+            &:hover {
+                color: $mainOrange;
+                &::after {
+                    opacity: 1;
+                    visibility: visible;
+                    z-index: 5; 
+                }
+            }
+        }
+    }
+
+    &__sub-menu {
+        opacity: 0;
+        visibility: hidden;
+        position: absolute;
+        width: 100%;
+        left: 0;
+        top: 99%;
+        background-color: $mainDarkColor;
+    }
+}
+.sub-menu-catalog {
+    padding-bottom: rem(30);
+    &__block {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    &__column {
+        flex: 1 1 auto;
+        display:flex;
+        flex-direction: column;
+    }
+
+    &__category {
+        align-self: flex-start;
+        font-size: rem(16);
+        font-weight: 700;
+        line-height: percent(20, 16);
+        padding: rem(30) rem(10);
+        
+        @media(any-hover: hover) {
+            &:hover {
+                text-decoration: underline;
+            }
+        }
+    }
+
+    &__list {
+        flex: 1 1 auto;
+        display: flex;
+        flex-direction: column;
+        gap: rem(20);
+        padding: rem(30) rem(10);
+        border-top: 1px solid rgba(255, 255, 255, 0.3);
+        border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+    }
+
+    &__item {
+    }
+
+    &__link {
+        font-style: rem(16);
+        line-height: percent(20, 16);
+        @media(any-hover: hover) {
+            &:hover {
+                text-decoration: underline;
+            }
+        }
+    }
+
+    &__all {
+        align-self: self-start;
+        font-size: rem(16);
+        color: $mainOrange;
+        padding-top: rem(30);
+        padding-left: rem(10);
+        padding-right: rem(10);
+        @media(any-hover: hover) {
+            &:hover {
+                text-decoration: underline;
+            }
+        }
+    }
+}
+
 
