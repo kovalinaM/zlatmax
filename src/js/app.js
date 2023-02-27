@@ -4,7 +4,7 @@ flsFunctions.menuInit();
 flsFunctions.spollers();
 flsFunctions.initPopups();
 
-// import "./libs/dynamic_adapt.js";
+import "./libs/dynamic_adapt.js";
 import "./files/script.js";
 
 

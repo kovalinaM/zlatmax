@@ -1,32 +1,14 @@
 //файл обнуляющих стилей
 @import "nullstyle.scss";
 
+@import "base/_mixins";
 
 //Подключение шрифтов
 @import "fonts/icons.scss";
 @import "fonts/fonts.scss";
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700&display=swap');
 /*========================================*/
-//Функции rem  и em
-$fz: 16;
 
-@function rem($size) {
-    $remSize: calc($size / $fz);
-    @return $remSize * 1rem;
-}
-
-@function em($size, $parSize) {
-    $emSize: calc($size / $parSize);
-    @return $emSize * 1em;
-}
-
-//Для расчета % значения
-@function percent($value1, $value2) {
-    $percentValue: calc($value1 / $value2 * 100%);
-    @return $percentValue;
-}
-
-/*===========================================*/
 
 //Шрифт по умолчанию
 $fontFamily: 'Montserrat', sans-serif;
@@ -55,10 +37,10 @@ $containerPadding: 30;
 $containerWidth: $maxWidthContainer + $containerPadding;
 
 //Брейк-пойнты
-$pc: em($containerWidth, $fz); //ПК, ноутбуку, некоторые планшеты в горизонтальном положении
-$tablet: em(991.98, $fz); // Плантшеты нектооые тедефоны в горизонтальном положении
-$mobile: em(767.98, $fz); // Телефоны L
-$mobileSmall: em(479.98, $fz); //Телефоны
+$pc: em($containerWidth); //ПК, ноутбуку, некоторые планшеты в горизонтальном положении
+$tablet: em(991.98); // Плантшеты нектооые тедефоны в горизонтальном положении
+$mobile: em(767.98); // Телефоны L
+$mobileSmall: em(479.98); //Телефоны
 
 //Тип адаптива
 //1 = отзывчивыость (у контейнера нет брейкпойнтов)
