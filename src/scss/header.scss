@@ -2,10 +2,10 @@
 //Стили иконки меню Burger
 .icon-menu{
     display: none;
-    @media(max-width: $mobile){
+    @media(max-width: $tablet){
         display: block;
         position: relative;
-        flex: 0 0 rem(28);
+        width: rem(30);
         height: rem(17);
         border-radius: 50%;
         background-color: $mainColor;
@@ -108,10 +108,7 @@
     }
 }
 
-.menu {
-
-    &__body {
-    }
+.menu-top-header{
 
     &__list {
         display: flex;
@@ -135,6 +132,17 @@
             }
         }
     }
+}
+
+.menu {
+
+    &__body {
+    }
+    @media(max-width: $tablet) {
+        flex: 0 0  30px;
+        display: block;
+    }
+
 }
 
 
@@ -210,18 +218,21 @@
     display: flex;
     align-items: center;
     column-gap: rem(30);
+    @media(max-width: 1200px) {
+        column-gap: rem(20);
+    }
 
     &__location {
         display: inline-flex;
         align-items: center;
         font-weight: 600;
         margin: 0 rem(25) 0 0;
+        @media(max-width: 1200px) {
+            margin: 0 rem(5) 0 0;
+        }
         &:before {
             font-size: rem(24);
-            margin: 0 rem(24) 0 0;
-            @media(max-width: $mobile) {
-                margin: 0 rem(10) 0 0;
-            }
+            margin: 0 rem(24) 0 0;          
         }
         span{
             @media(any-hover: hover) {
@@ -305,7 +316,7 @@
     display: flex;
     align-items: center;
     column-gap: rem(15);
-
+    
     &__icon {
         flex: 0 0 37px;
         font-size: rem(35);
@@ -329,6 +340,9 @@
     &__body {
         font-size: rem(16);
         line-height: percent(20 ,16); 
+        @media(max-width: em(1250, 16)) {
+            display: none;
+        }
     }
 
     &__summ {
@@ -357,7 +371,6 @@
     position: relative;
 
     &__container {
-        
     }
 
     &__menu {
@@ -428,15 +441,19 @@
     &__block {
         padding-bottom: rem(30);
         display: none;
+        @for $var from 1 to 6 {
+            &_#{$var}{
+                justify-content: start;
+                grid-template-columns: repeat($var, minmax(auto, 320px));
+            }
+        }
         &._sub-menu-open{
-            display: flex;
+            display: grid; 
         }
     }
 
-    &__column {
-        flex: 0 1 rem(320);
-        display:flex;
-        flex-direction: column;
+    &__container{
+        padding: 0 rem(10);
     }
 
     &__category {
@@ -444,7 +461,7 @@
         font-size: rem(16);
         font-weight: 700;
         line-height: percent(20, 16);
-        padding: rem(30) rem(15);
+        padding: rem(30) rem(15) rem(30) 0;
         
         @media(any-hover: hover) {
             &:hover {
@@ -458,7 +475,7 @@
         display: flex;
         flex-direction: column;
         gap: rem(20);
-        padding: rem(30) rem(15);
+        padding: rem(30) rem(15) rem(30) 0;
         border-top: 1px solid rgba(255, 255, 255, 0.3);
         border-bottom: 1px solid rgba(255, 255, 255, 0.3);
     }
@@ -481,7 +498,7 @@
         font-size: rem(16);
         color: $mainOrange;
         padding-top: rem(30);
-        padding-left: rem(15);
+        padding-left: 0;
         padding-right: rem(15);
         @media(any-hover: hover) {
             &:hover {
