@@ -13,8 +13,17 @@ export function menuInit() {
         burger.classList.toggle('menu-open');
         menuBody.classList.toggle('menu-open');
         body.classList.toggle('lock');
+        if (document.documentElement.classList.contains('catalog-open')) {
+            document.documentElement.classList.remove('catalog-open');
+        }
+        if (document.documentElement.classList.contains('sub-menu-open')) {
+            document.documentElement.classList.remove('sub-menu-open');
+        }
     }
 }
+/* Проверка мобильного браузера */
+export let isMobile = { Android: function () { return navigator.userAgent.match(/Android/i); }, BlackBerry: function () { return navigator.userAgent.match(/BlackBerry/i); }, iOS: function () { return navigator.userAgent.match(/iPhone|iPad|iPod/i); }, Opera: function () { return navigator.userAgent.match(/Opera Mini/i); }, Windows: function () { return navigator.userAgent.match(/IEMobile/i); }, any: function () { return (isMobile.Android() || isMobile.BlackBerry() || isMobile.iOS() || isMobile.Opera() || isMobile.Windows()); } };
+
 /*=======Spollers=====================*/
 export function spollers() {
 

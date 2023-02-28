@@ -5,11 +5,10 @@
     @media(max-width: $tablet){
         display: block;
         position: relative;
-        width: rem(30);
-        height: rem(17);
+        width: rem(40);
+        height: rem(22.5);
         border-radius: 50%;
-        background-color: $mainColor;
-        z-index: 5;
+        z-index: 10;
         @media (any-hover: none) {
             cursor: default;
         }
@@ -20,7 +19,7 @@
             transition: all 0.3s ease 0s;
             right: rem(7);
             position: absolute;
-            height: rem(1);
+            height: rem(3);
             background-color: #fff;
         }
 
@@ -39,7 +38,7 @@
         }
 
         span{
-            top: 50%;
+            top: calc(50% - 1px);
         }
     }
 }
@@ -83,20 +82,28 @@
         align-items: center;
         gap: rem(20);
         min-height: rem(50);
+        @media(max-width: $tablet) {
+            gap: rem(30);
+        }
     }
 
     &__menu {
-        flex: 1 1 auto;
+        
+        @media(min-width: $tablet){
+            flex: 1 1 auto;
+        }
     }
 
     &__user {
+        position: relative;
+        z-index: 5;
         display: inline-flex;
         align-items: center;
         font-weight: 600;
         line-height: percent(22, 18);
+        gap: em(15, 18);
         &::before {
-            font-size: rem(28);
-            margin-right: em(15, 28);
+            font-size: rem(28);  
         }
         span{
             @media(any-hover: hover) {
@@ -104,6 +111,14 @@
                     text-decoration: underline;
                 }
             }
+        }
+        @media(max-width: $tablet) {
+            &:before{
+                font-size: rem(35);
+            }
+            span{
+                display: none;
+            } 
         }
     }
 }
@@ -116,7 +131,7 @@
         @include adaptiveValue("column-gap", 60, 20);
         @media(max-width: $tablet) {
             flex-direction: column;
-            row-gap: rem(10); 
+            row-gap: rem(25); 
         }
     }
 
@@ -133,6 +148,7 @@
         }
         &_catalog {
             display: flex;
+            align-items: center;
             flex-direction: row-reverse;
             justify-content: space-between;
             &:before {
@@ -141,16 +157,14 @@
                 align-items: center;
                 height: rem(14);
                 font-size: rem(10);
-                transform: rotate(-90deg);
+                transform: translateY(rem(-2)) rotate(-90deg);
             }
         }
         @media(max-width: $tablet) {
-            @include adaptiveValue("font-size", 30, 18, 992, 320, 1);
+            @include adaptiveValue("font-size", 30, 20, 992, 320, 1);
         }
     }
-    @media(max-width: $tablet) {
-        display: none;
-    }
+
 }
 
 .top-header__item_catalog{
@@ -170,14 +184,30 @@
             left: -100%;
             overflow: auto;
             background-color: $mainDarkColor;
-            padding: rem(80) rem(15) rem(50) rem(15);
+            padding: rem(100) rem(15) rem(50) rem(15);
+            transition: left 0.3s ease;
             z-index: 4;
+            &::before{
+                content: '';
+                position: fixed;
+                width: 100%;
+                height: rem(70);
+                left: -100%;
+                top: 0;
+                background-color: $mainDarkColor;
+            }
+            &.menu-open{
+                left: 0;
+                &::before{
+                    left: 0;
+                }
+            }
         }
     }
     @media(max-width: $tablet) {
         flex: 1 1 auto;
         display: flex;
-        justify-content: space-between;
+        justify-content: flex-end;
     }
 
 }
@@ -193,6 +223,9 @@
         display: flex;
         min-height: rem(70);
         align-items: center;
+        @media(max-width: $tablet) {
+            justify-content: space-between;
+        }
     }
 
     &__logo {
@@ -204,10 +237,11 @@
 
     &__search {
         flex: 1 1 auto;
-        padding-left: rem(158);
-        padding-right: rem(20);
-        @media(max-width: rem(1300)) {
-            padding-left: rem(20);
+        @media(min-width: $tablet) {
+            padding-right: rem(20);
+        }
+        @media(min-width: $mobileSmall) {
+            @include adaptiveValue("padding-left", 158, 20, 1620, 1250, 1);
         }
     }
 
@@ -215,12 +249,13 @@
     }
 }
 .search-header {
-    max-width: rem(377);
     border-radius: rem(3);
     border: 1px solid rgba(4,4,4,0.5);
     background-color: rgba(7,7,7,0.03);
-    background-color: #ecf1f2;
     position: relative;
+    @media(min-width: $mobile) {
+        max-width: rem(377);
+    }
 
     &__button {
         position: absolute;
@@ -247,6 +282,9 @@
             color: rgba(0,0,0,0.5);
         }
     }
+    @media(max-width:$mobileSmall) {
+        background-color: #fff;
+    }
 }
 
 /*==================================*/
@@ -255,8 +293,9 @@
     display: flex;
     align-items: center;
     column-gap: rem(30);
-    @media(max-width: em(1200)) {
-        column-gap: rem(20);
+    @include adaptiveValue("column-gap", 30, 20, 1620, 1000,1);
+    @media(max-width: $mobile) {
+        display: none;
     }
 
     &__location {
@@ -278,6 +317,9 @@
                 }
             }
         }
+        @media(max-width: $tablet) {
+            display: none;
+        }
     }
 
     &__phones {
@@ -285,6 +327,8 @@
 
     &__favourite {
         font-size: rem(27);
+        position: relative;
+        z-index: 5;
     }
 
     &__cart {
@@ -293,7 +337,8 @@
 }
 
 .phones-header {
-
+    position: relative;
+    z-index: 5;
     &__items {
     }
 
@@ -306,6 +351,23 @@
         font-weight: 600;
         line-height: percent(22, 18);
         white-space: nowrap;
+        &::before{
+            @extend %ic;
+            @extend ._icon-footer-phone;
+            display: none;
+        }
+        @media(max-width: $tablet) {
+            font-size: rem(25);
+        }
+        @media(max-width: $mobileSmall){
+            &::before{
+                display: block;
+                font-size: rem(32);
+            }
+            span {
+                display: none;
+            }
+        }
     }
 
     &__arrow {
@@ -315,6 +377,9 @@
         transition: transform 0.5s ease;
         &._active {
             transform: rotate(-180deg);
+        }
+        @media(max-width: $tablet) {
+            display: none;
         }
     }
 
@@ -334,6 +399,9 @@
                 margin-bottom: em(8, 18);
             }
         }
+        @media(max-width: $tablet) {
+            display: none;
+        }
     }
 
     &__callback {
@@ -346,6 +414,9 @@
                 text-decoration: underline;
             }
         }
+        @media(max-width: $tablet) {
+            display: none;
+        }
     }
 }
 
@@ -353,6 +424,8 @@
     display: flex;
     align-items: center;
     column-gap: rem(15);
+    position: relative;
+    z-index: 5;
     
     &__icon {
         flex: 0 0 37px;
@@ -412,28 +485,69 @@
 
     &__menu {
     }
+    @media(max-width: $mobileSmall) {
+        padding: rem(20) 0;
+    }
 }
 
 .menu-catalog {
+    @media(max-width: $tablet) {
+        position: fixed;
+        top:0;
+        left: -100%;
+        width: 100%;
+        height: 100%;
+        overflow: auto;
+        background-color: $mainDarkColor;
+        padding: rem(20) rem(15) rem(50) rem(15);
+        transition: left 0.3s ease;
+        .catalog-open &{
+            left: 0;
+            z-index: 6;
+        }
+    }
 
     &__list {
         display: flex;
         justify-content: space-between;
-        gap: rem(10);
+        column-gap: rem(10);
+        @media(max-width: $tablet) {
+            flex-direction: column;
+            row-gap: rem(25);
+        }
     }
 
     &__item {
     }
 
-    &__link {
-        min-height: rem(70);
+    &__link { 
         padding: 0 rem(10);
         display: flex;
-        justify-content: center;
-        align-items: center;
-        text-align: center;
         position: relative;
         transition: color 0.3s ease;
+        &[data-parent] {
+            &::before{
+                @extend %ic;
+                @extend ._icon-arrow-bottom; 
+                display: none;
+                @media(max-width: $tablet) {
+                    display: block;
+                    transform: translateY(rem(2)) rotate(-90deg);
+                    font-size: rem(10);
+                }
+            }
+            @media(max-width: $tablet) {
+                display: flex;
+                flex-direction: row-reverse;
+                justify-content: space-between;;
+            }
+        }
+        @media(min-width: $tablet) {
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            min-height: rem(70);
+        }
         &::after{
             content: "";
             position: absolute;
@@ -456,13 +570,32 @@
                 }
             }
         }
-        &._sub-menu-active {
-            color: $mainOrange;
+        @media(min-height: $tablet) {
+            &._sub-menu-active {
+                color: $mainOrange;
                 &::after {
                     opacity: 1;
                     visibility: visible;
-                    z-index: 5; 
+                    z-index: 6; 
                 }
+            }
+        }
+        @media(max-width: $tablet) {
+            @include adaptiveValue("font-size", 30, 20, 992, 329, 1);
+        }
+    }
+    &__back{
+        display: none;
+        @media(max-width: $tablet) {
+            display: inline-flex;
+            align-items: center;
+            @include adaptiveValue("font-size", 30, 20, 992, 329, 1);
+            &:not(:last-child) {
+                margin-bottom: em(65, 30);
+            }
+            &::before{
+                margin: 0 em(13,30) 0 0;
+            }
         }
     }
 
@@ -474,19 +607,39 @@
     }
 }
 .sub-menu-catalog {
-
+    @media(max-width: $tablet) {
+        position: fixed;
+        top:0;
+        left: -100%;
+        width: 100%;
+        height: 100%;
+        overflow: auto;
+        background-color: $mainDarkColor;
+        padding: rem(20) rem(15) rem(50) rem(15);
+        transition: left 0.3s ease;
+        @include adaptiveValue("font-size", 30, 20, 992, 329, 1);
+        .sub-menu-open &{
+            display: block;
+            left: 0;
+            z-index: 6;
+        }
+    }
     &__block {
         padding-bottom: rem(30);
         display: none;
         @for $var from 1 to 6 {
             &_#{$var}{
-                justify-content: start;
                 grid-template-columns: repeat($var, minmax(auto, 320px));
             }
         }
         &._sub-menu-open{
             display: grid; 
+            @media(max-width: $tablet) {
+                display: block;
+            }
         }
+
+
     }
 
     &__container{
@@ -494,15 +647,24 @@
     }
 
     &__category {
-        align-self: flex-start;
         font-size: rem(16);
-        font-weight: 700;
         line-height: percent(20, 16);
-        padding: rem(30) rem(15) rem(30) 0;
         
         @media(any-hover: hover) {
             &:hover {
                 text-decoration: underline;
+            }
+        }
+
+        @media(min-width: $tablet) {
+            padding: rem(30) rem(15) rem(30) 0;
+            font-weight: 700;
+        }
+        @media(max-width: $tablet) {
+            @include adaptiveValue("font-size", 30, 20, 992, 329, 1);
+            display: grid;
+            &:not(:last-child) {
+                margin-bottom: em(25,16);
             }
         }
     }
@@ -515,6 +677,9 @@
         padding: rem(30) rem(15) rem(30) 0;
         border-top: 1px solid rgba(255, 255, 255, 0.3);
         border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+        @media(max-width: $tablet) {
+            display: none;
+        }
     }
 
     &__item {
@@ -523,12 +688,18 @@
     &__link {
         font-style: rem(16);
         line-height: percent(20, 16);
+
         @media(any-hover: hover) {
             &:hover {
                 text-decoration: underline;
             }
         }
     }
+
+    &__link-category {
+        @include adaptiveValue("font-size", 30, 20, 992, 320, 1);
+    }
+
 
     &__all {
         align-self: self-start;
@@ -537,9 +708,29 @@
         padding-top: rem(30);
         padding-left: 0;
         padding-right: rem(15);
+
         @media(any-hover: hover) {
             &:hover {
                 text-decoration: underline;
+            }
+        }
+
+        @media(max-width: $tablet) {
+            display: none;
+        }
+    }
+
+    &__back{
+        display: none;
+        @media(max-width: $tablet) {
+            display: inline-flex;
+            align-items: center;
+            @include adaptiveValue("font-size", 30, 20, 992, 329, 1);
+            &:not(:last-child) {
+                margin-bottom: em(65, 30);
+            }
+            &::before{
+                margin: 0 em(13,30) 0 0;
             }
         }
     }
