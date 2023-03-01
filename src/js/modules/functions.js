@@ -335,3 +335,11 @@ export function isWeb() {
         });
 }
 
+// FLS (Full Logging System)
+export function FLS(message) {
+	setTimeout(() => {
+		if (window.FLS) {
+			console.log(message);
+		}
+	}, 0);
+}

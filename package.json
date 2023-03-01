@@ -50,6 +50,7 @@
     "webpack-stream": "^7.0.0"
   },
   "dependencies": {
+    "tippy.js": "^6.3.7",
     "zip": "^1.2.0"
   }
 }
