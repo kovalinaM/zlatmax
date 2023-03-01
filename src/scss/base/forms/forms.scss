@@ -1,0 +1,16 @@
+.button{
+    display: inline-flex;
+    padding: rem(8) rem(52);
+    font-weight: 600;
+    font-size: rem(20);
+    line-height: percent(32,20);
+    background: $mainOrange;
+    box-shadow: 0px 4px 20px rgba(232, 170, 49, 0.43);
+    border-radius: 3px;
+    transition: box-shadow 0.3s ease;
+    @media(any-hover: hover) {
+        &:hover{
+            box-shadow: 0px 4px 40px rgba(232, 170, 49, 0.6); 
+        }
+    }
+}

@@ -107,6 +107,7 @@ $responsiveType: 1;
 
 @import "base";
 @import "common";
+@import "home";
 /*Стили будут применяться для всех классов *-ibg. Например, main__image-ibg*/
 // [class*="-ibg"] {
 //     position: relative;
@@ -144,4 +145,13 @@ body{
     display: flex;
     flex-direction: column;
     overflow: hidden;    
+}
+
+.page {
+
+    &_home {
+    }
+
+    &__main-block {
+    }
 }
