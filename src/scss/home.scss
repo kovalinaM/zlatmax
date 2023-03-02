@@ -8,13 +8,26 @@
 
     &__body {
         display: grid;
-        grid-template-columns: 1fr percent(635,1600);
+        align-items: start;
+        row-gap: rem(40);
+        &:not(:last-child){
+            @include adaptiveValue("margin-bottom", 120, 46); 
+        }
+        @media(min-width: $tablet) {
+            grid-template-columns: 1fr percent(635,1600);
+        }
+
     }
 
     &__slider {
+        // margin: 0 rem(-50);
+        // padding: 0 rem(50);
     }
 
     &__swiper {
+        &:not(:last-child) {
+            margin-bottom: rem(30);
+        }
     }
 
     &__slide {
@@ -25,7 +38,70 @@
 
     &__advantages {
     }
+    &__controll {
+    }
 }
+
+.contoll-main-block {
+    display: inline-grid;
+    grid-auto-flow: column;
+    align-items: center;
+    gap: rem(20);
+    &__dotts {
+        display: inline-grid;
+        grid-auto-flow: column;
+        gap: rem(15);
+        .swiper-pagination-bullet {
+            cursor: pointer;
+            height: rem(2);
+            width: rem(18);
+            background-color: #fff;
+            transition: all 0.3s ease;
+            &::before {
+                content: "";
+                position: absolute;
+                box-shadow: 0px 4px 20px rgba(232, 170, 49, 0.66);
+                height: rem(10);
+                width: rem(10);
+                border-radius: 50%;
+                background-color: $mainOrange;
+                top: rem(-5);
+                left: 0;
+                opacity: 0;
+                }
+        }
+        .swiper-pagination-bullet-active {
+            background-color: $mainOrange;
+            height: rem(2);
+            width: rem(30);
+            position: relative;
+            &:before{
+                opacity: 1;
+                left: rem(20);
+                transition: left 3s linear;
+            }
+            }
+    }
+
+    &__fraction {
+    }
+}
+.fraction-contoll {
+    display: flex;
+    align-items: flex-end;
+    color: #fff;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    &__current {
+        color: $mainOrange;
+        font-size: rem(24);
+    }
+
+    &__all {
+        font-size: rem(18);
+    }
+}
+
 .media-main-block {
     display: flex;
     align-items: center;
@@ -37,8 +113,8 @@
     &__image {
         &:before{
             content: "";
-            width: 420px;
-            height: 420px;
+            width: percent( 423, 449);
+            padding-bottom: percent( 423, 449);
             border: 2px solid rgba(255, 255, 255, 0.5);
             border-radius: 50%;
             position: absolute;
@@ -49,6 +125,7 @@
         img{
             position: relative;
             z-index: 2;
+            max-width: 100%;
         }
     }
 
@@ -123,7 +200,9 @@
 
     &__content {
         letter-spacing: 0.03em;
-        padding: 0 rem(40) 0 0;
+        @media(min-width: $tablet) {
+            padding: 0 rem(40) 0 0;
+        }
         &:not(:last-child) {
             @include adaptiveValue("margin-bottom", 60, 30);
         }
@@ -131,7 +210,7 @@
 
     &__title {
         font-weight: 700;
-        font-size: rem(36);
+        @include adaptiveValue("font-size", 36, 22, 992, 320, 1);
         line-height: percent(46,36);
         &:not(:last-child) {
             margin-bottom: em(15, 36);
@@ -139,7 +218,7 @@
     }
 
     &__sub-title {
-        font-size: rem(36);
+        @include adaptiveValue("font-size", 36, 22, 992, 320, 1);
         line-height: percent(46,36);
         &:not(:last-child) {
             margin-bottom: em(30, 36);
@@ -147,25 +226,164 @@
     }
 
     &__text {
-        font-size: rem(20);
+        @include adaptiveValue("font-size", 20, 16, 992, 320, 1);
         line-height: percent(30, 20); 
         color: rgba(255, 255, 255, 0.7);
 
     }
 
     &__button {
+        @media(max-width: $mobileSmall) {
+            width: 100%;
+        }
     }
 }
-.button {
-}
-.advantages-main {
 
+.advantages-main {
+    display: grid;
+    grid-template-columns: repeat(4,auto);
+    gap: rem(20);
+    justify-content: space-between;
+    @media(max-width: $tablet) {
+        row-gap: rem(30);
+        grid-template-columns: repeat(2, 1fr);
+        justify-items: center;
+    }
+    @media(max-width: $mobile) {
+        grid-template-columns: repeat(1, 1fr);
+    }
     &__item {
+        display: inline-grid;
+        gap: rem(17);
+        text-align: center;
+        max-width: rem(290);
+        grid-template-rows:  77px auto;
     }
 
     &__icon {
+        align-self: center;
     }
 
     &__text {
+        font-weight: 600;
+        font-size: rem(20);
+        line-height: percent(32, 20);
     }
 }
+
+/*=====================================================================================*/
+
+.catalog-cards {
+    @include adaptiveValue("padding-top", 100, 30);
+    @include adaptiveValue("padding-bottom", 70, 30);
+    &__container {
+        display: grid;
+        gap: rem(30);
+        @media(min-width: $mobileSmall) {
+            grid-template-columns: repeat(auto-fit, minmax(rem(400), 1fr));
+        }
+    }
+
+    &__item {
+    }
+}
+.item-catalog-cards {
+    box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.15);
+    position: relative;
+    overflow: hidden;
+    min-height: rem(290);
+    transition: box-shadow 0.3s ease;
+    @media(any-hover: hover) {
+        &:hover {
+            box-shadow: 0px 4px 25px rgba(0, 0, 0, 0.25);
+        }
+    }
+
+    &__body {
+        position: relative;
+        z-index: 2;
+        @include adaptiveValue("padding", 30, 20);
+    }
+
+    &__title {
+        &:not(:last-child) {
+            @include adaptiveValue("margin-bottom", 45, 40, 992, 320, 1) ;
+        }
+    }
+
+    &__link-title {
+        font-weight: 600;
+        font-size: rem(24);
+        line-height: percent(34, 24);
+        position: relative;
+        display: inline-block;
+        &::after {
+            content: "";
+            position: absolute;
+            height: rem(2);
+            width: rem(70);
+            margin: rem(15) 0 0 0;
+            left:0;
+            display: block;
+            background-color: $mainOrange;
+            transition: width 0.8s ease;
+        }
+        @media(any-hover: hover) {
+            &:hover {
+                &::after{
+                    width: 100%;
+                }
+            }
+        }
+    }
+
+    &__list {
+    }
+
+    &__item {
+        position: relative;
+        padding-left: rem(20);
+        &::before {
+            content: "";
+            width: rem(6);
+            height: rem(6);
+            border-radius: 50%;
+            background-color: $mainOrange;
+            top: em(8, 18);
+            left: 0;
+            position: absolute;
+        }
+        &:not(:last-child) {
+            margin-bottom: rem(10);
+        }
+    }
+
+    &__link {
+        font-size: rem(18);
+        line-height: percent(24, 18);
+        @media(any-hover: hover) {
+            &:hover {
+                text-decoration: underline;
+            }
+        }
+    }
+
+    &__image {
+        text-align: right;
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        transform: translate(0, 8%);
+        img {
+            max-width: 100%;
+        }
+        @media(min-width: $mobileSmall) {
+            position: absolute;
+            height: 100%;
+            width: 100%;
+            bottom: 0;
+            right: 0;
+        }
+    }
+}
+
