@@ -1,5 +1,5 @@
 
-import { isMobile, FLS } from "./functions.js";
+import { isMobile, FLS } from "../modules/functions.js";
 // Подключение списка активных модулей
 import { flsModules } from "./modules.js";
 
@@ -7,7 +7,7 @@ import { flsModules } from "./modules.js";
 import tippy from 'tippy.js';
 
 // Подключение cтилей из src/scss/libs
-import "../../scss/libs/tippy.scss";
+// import "../../scss/libs/tippy.scss";
 // Подключение cтилей из node_modules
 //import 'tippy.js/dist/tippy.css';
 

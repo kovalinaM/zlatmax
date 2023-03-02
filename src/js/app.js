@@ -11,9 +11,7 @@ flsFunctions.initPopups();
 
 import "./libs/dynamic_adapt.js";
 import "./files/script.js";
-// import "./files/tippy.js";
+import "./files/sliders.js";
+import "./files/tippy.js";
 
 
-// import Swiper, { Navigation, Pagination } from 'swiper';
-
-// const swiper = new Swiper();
