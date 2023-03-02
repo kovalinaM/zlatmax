@@ -24,7 +24,6 @@ EffectFade, Lazy, Manipulation
 // import 'swiper/css';
 function buildSliders(){
 	let sliders = document.querySelectorAll('[class*="__swiper"]:not(.swiper-wrapper)');
-	console.log(sliders);
 	if (sliders) {
 		sliders.forEach(slider => {
 			slider.parentElement.classList.add('swiper');
