@@ -2,12 +2,13 @@
 window['FLS'] = true;
 
 import * as flsFunctions from "./modules/functions.js";
+import * as flsForms from "./files/forms/forms.js";
 
 
 flsFunctions.menuInit();
 flsFunctions.spollers();
 flsFunctions.initPopups();
-
+flsForms.formRating();
 
 import "./libs/dynamic_adapt.js";
 import "./files/script.js";

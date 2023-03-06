@@ -2,14 +2,11 @@
 // Подключение списка активных модулей
 import { flsModules } from "../modules.js";
 // Вспомогательные функции
-import { isMobile, _slideUp, _slideDown, _slideToggle, FLS } from "../functions.js";
+import { isMobile, _slideUp, _slideDown, _slideToggle, FLS } from "../../modules/functions.js";
 // Модуль прокрутки к блоку
-import { gotoBlock } from "../scroll/gotoblock.js";
+// import { gotoBlock } from "../scroll/gotoblock.js";
 //================================================================================================================================================================================================================================================================================================================================
 
-/*
-Документация: https://template.fls.guru/template-docs/rabota-s-formami.html
-*/
 
 // Работа с полями формы. Добавление классов, работа с placeholder
 export function formFieldsInit(options = { viewPass: false }) {
@@ -224,7 +221,7 @@ export function formSubmit(options = { validate: true }) {
 		FLS(`[Формы]: ${message}`);
 	}
 }
-/* Модуь формы "колличество" */
+/* Модуь формы "количество" */
 export function formQuantity() {
 	document.addEventListener("click", function (e) {
 		let targetElement = e.target;
@@ -257,7 +254,6 @@ export function formRating() {
 		// Инициализируем конкретный рейтинг
 		function initRating(rating) {
 			initRatingVars(rating);
-
 			setRatingActiveWidth();
 
 			if (rating.classList.contains('rating_set')) {
