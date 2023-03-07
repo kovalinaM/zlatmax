@@ -208,7 +208,17 @@
             </div>
           </div>
         </section>
-        @@include('html/_products-slider.html',{"title":"Хиты продаж", "link":"Перейти в каталог"})
+        <section class="page__hits-products hits-products">
+          @@include('html/_products-slider.html',{
+            "title":"Хиты продаж", 
+            "link":"Перейти в каталог"
+          })
+        </section>
+        <section class="page__new-products new-products">
+          @@include('html/_products-new.html',{
+            "title":"Новинки"
+          })
+        </section>
       </main>
       @@include('html/_footer.html', {})
     </div>
