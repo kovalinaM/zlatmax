@@ -1290,9 +1290,6 @@ h6 {
 }
 
 .products-slider__header {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
   letter-spacing: 0.05em;
 }
 @supports (margin-bottom: clamp( 1.875rem , 1.5673076923rem  +  1.5384615385vw , 3.125rem )) {
@@ -1303,6 +1300,14 @@ h6 {
 @supports not (margin-bottom: clamp( 1.875rem , 1.5673076923rem  +  1.5384615385vw , 3.125rem )) {
   .products-slider__header:not(:last-child) {
     margin-bottom: calc(1.875rem + 1.25 * (100vw - 20rem) / 81.25);
+  }
+}
+@media (min-width: 47.99875em) {
+  .products-slider__header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1.25rem;
   }
 }
 .products-slider__title {
@@ -1517,15 +1522,168 @@ h6 {
 
 /*==============================================================================*/
 .products-new {
+  padding: 2.8125rem 0 0 0;
   background: url("../img/mainpage/new-products/bg.jpg") bottom/cover no-repeat;
+  position: relative;
+}
+@media (min-width: 61.99875em) {
+  .products-new::before {
+    content: "";
+    position: absolute;
+    background-color: #fff;
+    height: 2.8125rem;
+    right: 0;
+    width: 53.6458333333%;
+    top: 0;
+  }
+}
+@supports (padding-top: clamp( 1.25rem , 0.7115384615rem  +  2.6923076923vw , 3.4375rem )) {
+  .products-new__inner {
+    padding-top: clamp( 1.25rem , 0.7115384615rem  +  2.6923076923vw , 3.4375rem );
+  }
+}
+@supports not (padding-top: clamp( 1.25rem , 0.7115384615rem  +  2.6923076923vw , 3.4375rem )) {
+  .products-new__inner {
+    padding-top: calc(1.25rem + 2.1875 * (100vw - 20rem) / 81.25);
+  }
+}
+@supports (padding-bottom: clamp( 1.25rem , 0.7115384615rem  +  2.6923076923vw , 3.4375rem )) {
+  .products-new__inner {
+    padding-bottom: clamp( 1.25rem , 0.7115384615rem  +  2.6923076923vw , 3.4375rem );
+  }
+}
+@supports not (padding-bottom: clamp( 1.25rem , 0.7115384615rem  +  2.6923076923vw , 3.4375rem )) {
+  .products-new__inner {
+    padding-bottom: calc(1.25rem + 2.1875 * (100vw - 20rem) / 81.25);
+  }
 }
 .products-new__container {
   display: grid;
-  grid-template-columns: 25% 1fr;
+  row-gap: 1.875rem;
+}
+@media (min-width: 61.99875em) {
+  .products-new__container {
+    grid-template-columns: 25rem 1fr;
+    align-items: start;
+  }
+}
+.products-new__body {
+  letter-spacing: 0.03em;
+}
+@supports (padding-right: clamp( 1.25rem , -3.6089341693rem  +  7.8369905956vw , 4.375rem )) {
+  .products-new__body {
+    padding-right: clamp( 1.25rem , -3.6089341693rem  +  7.8369905956vw , 4.375rem );
+  }
+}
+@supports not (padding-right: clamp( 1.25rem , -3.6089341693rem  +  7.8369905956vw , 4.375rem )) {
+  .products-new__body {
+    padding-right: calc(1.25rem + 3.125 * (100vw - 62rem) / 39.875);
+  }
+}
+.products-new__title {
+  font-weight: 700;
+  font-size: 1.875rem;
+  line-height: 153.3333333333%;
+  color: #FFFFFF;
+}
+@supports (margin-bottom: clamp( 1.25rem , 1.0961538462rem  +  0.7692307692vw , 1.875rem )) {
+  .products-new__title:not(:last-child) {
+    margin-bottom: clamp( 1.25rem , 1.0961538462rem  +  0.7692307692vw , 1.875rem );
+  }
+}
+@supports not (margin-bottom: clamp( 1.25rem , 1.0961538462rem  +  0.7692307692vw , 1.875rem )) {
+  .products-new__title:not(:last-child) {
+    margin-bottom: calc(1.25rem + 0.625 * (100vw - 20rem) / 81.25);
+  }
+}
+.products-new__text {
+  font-weight: 500;
+  line-height: 150%;
+  color: rgba(255, 255, 255, 0.7);
+}
+@supports (margin-bottom: clamp( 1.25rem , 0.6346153846rem  +  3.0769230769vw , 3.75rem )) {
+  .products-new__text:not(:last-child) {
+    margin-bottom: clamp( 1.25rem , 0.6346153846rem  +  3.0769230769vw , 3.75rem );
+  }
+}
+@supports not (margin-bottom: clamp( 1.25rem , 0.6346153846rem  +  3.0769230769vw , 3.75rem )) {
+  .products-new__text:not(:last-child) {
+    margin-bottom: calc(1.25rem + 2.5 * (100vw - 20rem) / 81.25);
+  }
 }
 .products-new__slider {
   min-width: 0;
+  padding: 3.4375rem 0 2.875rem 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 3.125rem;
 }
+@media (max-width: 61.99875em) {
+  .products-new__slider {
+    padding: 2.1875rem 0 1.875rem 0;
+  }
+}
+.products-new__dotts {
+  display: inline-grid;
+  grid-auto-flow: column;
+  gap: 0.9375rem;
+  justify-content: center;
+  transform: translate(0, 10%);
+  overflow: visible;
+}
+.products-new__dotts .swiper-pagination-bullet {
+  cursor: pointer;
+  height: 0.125rem;
+  width: 1.125rem;
+  background-color: #898989;
+  transition: all 0.3s ease;
+}
+.products-new__dotts .swiper-pagination-bullet::before {
+  content: "";
+  position: absolute;
+  box-shadow: 0px 4px 20px rgba(232, 170, 49, 0.66);
+  height: 0.625rem;
+  width: 0.625rem;
+  border-radius: 50%;
+  background-color: #e8aa31;
+  top: -0.3125rem;
+  left: 0;
+  opacity: 0;
+}
+.products-new__dotts .swiper-pagination-bullet-active {
+  background-color: #e8aa31;
+  height: 0.125rem;
+  width: 1.875rem;
+  position: relative;
+}
+.products-new__dotts .swiper-pagination-bullet-active:before {
+  opacity: 1;
+  left: 1.25rem;
+  transition: left 3s linear;
+}
+
+.link-arrow {
+  display: inline-flex;
+  flex-direction: row-reverse;
+  align-items: center;
+  color: #e8aa31;
+  font-weight: 600;
+  font-size: 1.25rem;
+  letter-spacing: 0.05em;
+}
+.link-arrow::before {
+  margin: 0 0 0 1em;
+  transform: rotate(-90deg);
+  font-size: 0.5rem;
+}
+@media (any-hover: hover) {
+  .link-arrow:hover span {
+    text-decoration: underline;
+  }
+}
+
 .main-block {
   background: url("../img/mainpage/bg.jpg") center/cover no-repeat;
 }
@@ -1978,6 +2136,34 @@ h6 {
   .hits-products {
     padding-bottom: calc(2.5rem + 5 * (100vw - 20rem) / 81.25);
   }
+}
+
+@supports (padding-top: clamp( 2.5rem , 1.2692307692rem  +  6.1538461538vw , 7.5rem )) {
+  .sale-products {
+    padding-top: clamp( 2.5rem , 1.2692307692rem  +  6.1538461538vw , 7.5rem );
+  }
+}
+@supports not (padding-top: clamp( 2.5rem , 1.2692307692rem  +  6.1538461538vw , 7.5rem )) {
+  .sale-products {
+    padding-top: calc(2.5rem + 5 * (100vw - 20rem) / 81.25);
+  }
+}
+@supports (padding-bottom: clamp( 2.5rem , 2.1923076923rem  +  1.5384615385vw , 3.75rem )) {
+  .sale-products {
+    padding-bottom: clamp( 2.5rem , 2.1923076923rem  +  1.5384615385vw , 3.75rem );
+  }
+}
+@supports not (padding-bottom: clamp( 2.5rem , 2.1923076923rem  +  1.5384615385vw , 3.75rem )) {
+  .sale-products {
+    padding-bottom: calc(2.5rem + 1.25 * (100vw - 20rem) / 81.25);
+  }
+}
+.sale-products__no-bottom {
+  padding-bottom: 0;
+}
+
+.new-products_no-top {
+  padding-top: 0;
 }
 
 /*-------------------------------*/

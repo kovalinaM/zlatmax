@@ -392,3 +392,17 @@
     @include adaptiveValue("padding-top", 50, 40);
     @include adaptiveValue("padding-bottom", 120, 40); 
 }
+
+.sale-products {
+    @include adaptiveValue("padding-top", 120, 40);
+    @include adaptiveValue("padding-bottom", 60, 40); 
+    &__no-bottom {
+        padding-bottom: 0;
+    }
+}
+
+.new-products{
+    &_no-top{
+    padding-top: 0;
+    }
+}
