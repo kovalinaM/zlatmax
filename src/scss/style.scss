@@ -130,6 +130,8 @@ body{
 }
 
 .page {
+    &__products-slider {
+    }
 
     &_home {
     }
@@ -141,5 +143,8 @@ body{
     }
 
     &__articles-module {
+    }
+
+    &__products-block {
     }
 }
