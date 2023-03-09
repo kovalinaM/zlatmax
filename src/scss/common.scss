@@ -1,8 +1,4 @@
-.page {
 
-    &__products-slider {
-    }
-}
 .products-slider {
     &__container {
     }
@@ -225,7 +221,7 @@
 }
 /*==============================================================================*/
 .products-new {
-    padding: rem(45) 0 0 0;
+    padding: rem(46) 0 0 0;
     background: url("../img/mainpage/new-products/bg.jpg") bottom / cover no-repeat;
     position: relative;
     @media(min-width: $tablet) {
@@ -233,7 +229,7 @@
             content: "";
             position: absolute;
             background-color: #fff;
-            height: rem(45);
+            height: rem(47);
             right: 0;
             width: percent(1030, 1920);
             top:0;
