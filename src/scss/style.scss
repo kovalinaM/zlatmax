@@ -108,7 +108,10 @@ $responsiveType: 1;
 
 @import "base";
 @import "common";
+
 @import "home";
+@import "catalog";
+@import "product";
 
 /*-------------------------------*/
 body{
@@ -134,6 +137,14 @@ body{
     }
 
     &_home {
+    }
+
+    &_inner {
+        padding-top: rem(30);
+    }
+
+    &__header {
+        padding-bottom: rem(30);
     }
 
     &__main-block {
