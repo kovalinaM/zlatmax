@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+    @@include('html/_head.html', { "title": "Карточка товара" })
+    <body>
+        <div class="wrapper">
+            @@include('html/_header.html', {})
+            <main class="page page_inner">
+                <div class="page__header">
+                    <div class="page__container">
+                        <nav class="page__breadcrumbs breadcrumbs">
+                            <ul class="breadcrumbs__list">
+                                <li class="breadcrumbs__item">
+                                    <a href="./index.html" class="breadcrumbs__link"><span>Главная</span></a>
+                                </li>
+                                <li class="breadcrumbs__item">
+                                    <a href="./catalog.html" class="breadcrumbs__link"><span>Разделочные ножи</span></a>
+                                </li>
+                                <li class="breadcrumbs__item">
+                                    <span class="breadcrumbs__current">Нож Снегирь</span>
+                                </li>
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+                <div class="product">
+                    <div class="product__container">
+                        <div class="product__main main-product">
+                            <div class="main-product__images images-product">
+                                <div class="images-product__slider">
+                                    <div class="images-product__swiper">
+                                        <div class="images__slide-ibg">
+                                            <img src="@img/productpage/product01/01.jpg" alt="Нож Снегирь">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="images-product__thumbs thumbs-images">
+                                    <div class="thumbs-images-product__swiper">
+                                        <div class="thumbs-images__slide-ibg">
+                                            <img src="@img/productpage/product01/01.jpg" alt="Нож Снегирь">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </main>
+            @@include('html/_footer.html', {})
+        </div>
+        @@include('html/_popup.html', {})
+        <script src="js/app.min.js"></script>
+    </body>
+</html>

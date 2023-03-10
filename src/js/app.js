@@ -12,10 +12,11 @@ flsFunctions.initPopups();
 flsForms.formRating();
 flsForms.formSubmit(true);
 flsForms.formFieldsInit();
+flsForms.formSelect(false);
 
 import "./libs/dynamic_adapt.js";
 import "./files/script.js";
 import "./files/sliders.js";
 import "./files/tippy.js";
-
+import "./files/forms/range.js";
 
