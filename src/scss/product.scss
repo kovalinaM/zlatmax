@@ -4,36 +4,251 @@
     }
 
     &__main {
+        @include adaptiveValue("margin-bottom", 120, 40);
+    }
+
+    &__info {
+        @include adaptiveValue("margin-bottom", 120, 40);
     }
 }
+
 .main-product {
-
+    display: grid;
+    align-items: start;
     &__images {
+        @media(min-width: $tablet) {
+            padding: 0 rem(30) 0 0;
+        }
+    }
+
+    &__body {
+    }
+
+    @media(min-width: $tablet) {
+        grid-template-columns: percent(785, 1600) 1fr;
     }
 }
-.images-product {
 
+.images-product {
+    display: grid;
+    gap: rem(16);
     &__slider {
     }
 
     &__swiper {
     }
 
+    &__slide-ibg {
+        padding-bottom: percent(577, 754);
+    }
+
     &__thumbs {
     }
 }
+
 .images {
 
     &__slide-ibg {
     }
 }
+
 .thumbs-images {
-
-    &__slide-ibg {
-    }
-}
-.thumbs-images-product {
-
     &__swiper {
     }
+
+    &__slide-ibg {
+        cursor: pointer;
+        padding-bottom: percent(177, 754);
+        opacity: 0.8;
+        transform: opacity 0.3s ease;
+        &.swiper-slide-thumb-active {
+            opacity: 1;
+        }
+    }
 }
+
+.body-product {
+    background: #fefefe;
+    box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.1);
+    @include adaptiveValue("padding", 30, 15);
+
+    &__header {
+        border-bottom: 1px solid rgba(20, 20, 20, 0.15);
+        padding: rem(30) 0;
+    }
+
+    &__table {
+        border-bottom: 1px solid rgba(20, 20, 20, 0.15);
+        padding: rem(30) 0;
+    }
+
+    &__options {
+        border-bottom: 1px solid rgba(20, 20, 20, 0.15);
+        padding: rem(30) 0;
+    }
+
+    &__actions {
+        gap: rem(30);
+        display: grid;
+        padding: rem(30) 0 0 0;
+    }
+}
+
+.header-product {
+
+    &__line {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        column-gap: rem(30);
+        row-gap: rem(15);
+        &:not(:last-child) {
+            margin-bottom: rem(10);
+        }
+        @media(min-width: $mobile) {
+        }
+    }
+
+    &__title {
+        font-weight: 700;
+        font-size: rem(24);
+        line-height: percent(29, 24);
+        flex: 1 1 auto;
+    }
+
+    &__actions {
+        display: flex;
+        gap: rem(30);
+    }
+
+    &__link {
+        @media(any-hover: hover) {
+            &:hover {
+                color: $mainOrange;
+            }
+        }
+    }
+
+    &__rating {
+        &:not(:last-child) {
+            margin-bottom: rem(10);
+        }
+    }
+
+    &__status {
+        font-weight: 500;
+        line-height: percent(20, 16);
+        color: #24ad53;
+    }
+}
+
+
+.table-product {
+    display: grid;
+    gap: rem(20);
+    @media(min-width: $mobile) {
+        grid-template-columns: rem(200) 1fr;
+    }
+
+    &__label {  
+    }
+
+    &__value {
+        color: rgba(20, 20, 20, 0.5);
+    }
+}
+
+.options-product {
+    display: grid;
+    gap: rem(20);
+    @media(min-width: $mobile) {
+        grid-template-columns: rem(200) 1fr;
+    }
+
+    &__label {
+    }
+
+    &__value {
+    }
+
+    &__select {
+    }
+}
+
+.actions-product {
+
+    &__price {
+        font-weight: 700;
+        font-size: rem(30);
+        line-height: percent(37, 30);
+        display: flex;
+        flex-direction: row-reverse;
+        justify-content: flex-end;
+        &:not(:last-child) {
+            margin-bottom: em(35, 15);
+        }
+    }
+
+    &__row {
+        display: flex;
+        justify-content: space-between;
+        gap: rem(20);
+        @media(max-width: em(1520)) {
+            flex-direction: column;
+        }
+    }
+
+    &__quantity {
+    }
+
+    &__buttons {
+        display: flex;
+        color: #fff;
+        gap: rem(20);
+        flex: 1 1 auto;
+        @media(min-width: em(1520)) {
+            justify-content: flex-end;
+        }
+        @media(max-width: $tablet) {
+            flex-direction: column;
+        }
+    }
+
+    &__cart {
+        span {
+            display: flex;
+            align-items: center;
+            flex-direction: row-reverse;
+            justify-content: center;
+            &::before {
+                margin: 0 0 0 rem(20);
+            }
+        }
+        @media(max-width: $mobileSmall) {
+            width: 100%;
+        }
+    }
+
+    &__button {
+        @media(max-width: $mobileSmall) {
+            width: 100%;
+        }
+    }
+}
+
+.quantity {
+
+    &__button {
+
+        &_plus {
+        }
+
+        &_minus {
+        }
+    }
+
+    &__input {
+    }
+}
+
+
