@@ -8,11 +8,13 @@ import * as flsForms from "./files/forms/forms.js";
 flsFunctions.menuInit();
 flsFunctions.spollers();
 flsFunctions.initPopups();
+flsFunctions.tabs();
 
 flsForms.formRating();
 flsForms.formSubmit(true);
 flsForms.formFieldsInit();
 flsForms.formSelect(false);
+flsForms.formQuantity();
 
 import "./libs/dynamic_adapt.js";
 import "./files/script.js";
