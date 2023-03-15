@@ -348,16 +348,16 @@ export function tabs() {
 		});
 
 		// Получение слойлеров с медиа запросами
-		let mdQueriesArray = dataMediaQueries(tabs, "tabs");
-		if (mdQueriesArray && mdQueriesArray.length) {
-			mdQueriesArray.forEach(mdQueriesItem => {
-				// Событие
-				mdQueriesItem.matchMedia.addEventListener("change", function () {
-					setTitlePosition(mdQueriesItem.itemsArray, mdQueriesItem.matchMedia);
-				});
-				setTitlePosition(mdQueriesItem.itemsArray, mdQueriesItem.matchMedia);
-			});
-		}
+		// let mdQueriesArray = dataMediaQueries(tabs, "tabs");
+		// if (mdQueriesArray && mdQueriesArray.length) {
+		// 	mdQueriesArray.forEach(mdQueriesItem => {
+		// 		// Событие
+		// 		mdQueriesItem.matchMedia.addEventListener("change", function () {
+		// 			setTitlePosition(mdQueriesItem.itemsArray, mdQueriesItem.matchMedia);
+		// 		});
+		// 		setTitlePosition(mdQueriesItem.itemsArray, mdQueriesItem.matchMedia);
+		// 	});
+		// }
 	}
 	// Установка позиций заголовков
 	function setTitlePosition(tabsMediaArray, matchMedia) {

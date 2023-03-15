@@ -142,7 +142,6 @@
     }
 }
 
-
 .table-product {
     display: grid;
     gap: rem(20);
@@ -236,19 +235,5 @@
     }
 }
 
-.quantity {
-
-    &__button {
-
-        &_plus {
-        }
-
-        &_minus {
-        }
-    }
-
-    &__input {
-    }
-}
 
 
