@@ -30,8 +30,8 @@
                                         <button type="button"  data-spoller class="price-filter__title _icon-arrow-bottom">Цена</button>
                                         <div data-range class="price-filter__body">
                                             <div class="price-filter__inputs">
-                                                <input data-range-from="0" autocomplete="off" name="form[]" value="500" type="text" class="price-filter__input">
-                                                <input data-range-to="5000"  autocomplete="off" name="form[]" value="1500" type="text" class="price-filter__input">
+                                                <input data-range-from="0" autocomplete="off" name="price" value="500" type="text" class="price-filter__input">
+                                                <input data-range-to="5000"  autocomplete="off" name="price" value="1500" type="text" class="price-filter__input">
                                             </div>
                                             <div data-range-item class="price-filter__range"></div>
                                         </div>
@@ -245,6 +245,61 @@
                                             </div>
                                         </div>
                                     </div>
+                                    <div class="filter-catalog__item item-filter-catalog">
+                                      <button type="button"  data-spoller class="item-filter-catalog__title _icon-arrow-bottom">Общая длина, мм</button>
+                                      <div data-range class="item-filter-catalog__body">
+                                          <div class="item-filter-catalog__inputs price-filter__inputs">
+                                              <input data-range-from="0" autocomplete="off" name="fulllength" value="50" type="text" class="item-filter-catalogr__input price-filter__input">
+                                              <input data-range-to="200"  autocomplete="off" name="fulllength" value="100" type="text" class="item-filter-catalog__input price-filter__input">
+                                          </div>
+                                          <div data-range-item class="item-filter-catalogr__range"></div>
+                                      </div>
+                                  </div>
+                                    <div class="filter-catalog__item item-filter-catalog">
+                                      <button type="button"  data-spoller class="item-filter-catalog__title _icon-arrow-bottom">Длина клинка, мм</button>
+                                      <div data-range class="item-filter-catalog__body">
+                                          <div class="item-filter-catalog__inputs price-filter__inputs">
+                                              <input data-range-from="0" autocomplete="off" name="length" value="50" type="text" class="item-filter-catalogr__input price-filter__input">
+                                              <input data-range-to="200"  autocomplete="off" name="length" value="100" type="text" class="item-filter-catalog__input price-filter__input">
+                                          </div>
+                                          <div data-range-item class="item-filter-catalogr__range"></div>
+                                      </div>
+                                  </div>
+                                    <div class="filter-catalog__item item-filter-catalog">
+                                      <button type="button"  data-spoller class="item-filter-catalog__title _icon-arrow-bottom">Ширина клинка, мм</button>
+                                      <div data-range class="item-filter-catalog__body">
+                                          <div class="item-filter-catalog__inputs price-filter__inputs">
+                                              <input data-range-from="0" autocomplete="off" name="width" value="50" type="text" class="item-filter-catalogr__input price-filter__input">
+                                              <input data-range-to="200"  autocomplete="off" name="width" value="100" type="text" class="item-filter-catalog__input price-filter__input">
+                                          </div>
+                                          <div data-range-item class="item-filter-catalogr__range"></div>
+                                      </div>
+                                  </div>
+                                  <div class="filter-catalog__item item-filter-catalog rating-filter-item">
+                                    <button type="button"  data-spoller class="item-filter-catalog__title _icon-arrow-bottom">Рейтинг</button>
+                                    <div  class="item-filter-catalog__body">
+                                        <div class="item-filter-catalog__checkbox checkbox">
+                                            <input id="rating_1" type="checkbox" class="checkbox__input" name="rating" data-error="Ошибка" value="1">
+                                            <label for="rating_1" class="checkbox__label"><span class="checkbox__text">★ ★ ★ ★ ★   <small>5/5</small></span></label>
+                                        </div>
+                                        <div class="item-filter-catalog__checkbox checkbox">
+                                            <input id="rating_2" type="checkbox" class="checkbox__input" name="rating" data-error="Ошибка" value="2">
+                                            <label for="rating_2" class="checkbox__label"><span class="checkbox__text">★ ★ ★ ★   <small>4/5</small></span></label>
+                                        </div>
+                                        <div class="item-filter-catalog__checkbox checkbox">
+                                            <input id="rating_3" type="checkbox" class="checkbox__input" name="rating" data-error="Ошибка" value="3">
+                                            <label for="rating_3" class="checkbox__label"><span class="checkbox__text">★ ★ ★   <small>3/5</small></span></label>
+                                        </div>
+                                        <div class="item-filter-catalog__checkbox checkbox">
+                                            <input id="rating_4" type="checkbox" class="checkbox__input" name="rating" data-error="Ошибка" value="4">
+                                            <label for="rating_4" class="checkbox__label"><span class="checkbox__text">★ ★   <small>2/5</small></span></label>
+                                        </div>
+                                        <div class="item-filter-catalog__checkbox checkbox">
+                                            <input id="rating_5" type="checkbox" class="checkbox__input" name="rating" data-error="Ошибка" value="5">
+                                            <label for="rating_5" class="checkbox__label"><span class="checkbox__text">★   <small>1/5</small></span></label>
+                                        </div>
+                                    </div>
+                                </div>
                                 </div>
                             </div>
                             <div class="catalog__content">

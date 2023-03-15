@@ -67,6 +67,8 @@
 		border: 1px solid #d9d9d9;
 		border-top: 0;
 		padding: 10px 0px 5px 0px;
+		z-index: 50;
+
 	}
 	// .select__scroll
 	&__scroll {
@@ -110,7 +112,7 @@
 
 	// Состояния селекта
 	&._select-open {
-		z-index: 5;
+		
 	}
 	&._select-disabled {
 	}

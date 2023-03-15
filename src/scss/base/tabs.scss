@@ -6,6 +6,8 @@
 	&__navigation {
 		display: flex;
 		justify-content: flex-start;
+		overflow-x: auto;
+		overflow-y: hidden;
 		@include adaptiveValue("gap", 60, 30);
 		border-bottom: 1px solid rgba(20, 20, 20, 0.15);
 		.tab-spoller & {
@@ -35,9 +37,22 @@
 	}
 
 	&__body {
+		&_flex {
+			@media(min-width: em(1060)){
+				display: flex;
+				justify-content: space-between;
+				align-items: center;
+			}
+		}
+
 		p{
 			margin-bottom: rem(30);
+			em {
+				font-weight: 600;
+				font-style: normal;
+			}
 		}
+
 		.tab-spoller & {
 			padding: rem(30) 0;
 		}

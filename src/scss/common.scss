@@ -121,8 +121,8 @@
         color: #fff;
         background-color: $mainOrange;
         padding: rem(6) rem(22);
-        z-index: 10;
-        pointer-events: none
+        z-index: 1;
+        pointer-events: none;
     }
 
     &__image{
@@ -468,6 +468,22 @@
         }
     }
 }
+/*==============================================================================*/
+.quantity {
+
+    &__button {
+
+        &_plus {
+        }
+
+        &_minus {
+        }
+    }
+
+    &__input {
+    }
+}
+
 
 
 
