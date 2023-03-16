@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
     @@include('html/_head.html', { "title": "Карточка товара" })
     <body>
         <div class="wrapper">
@@ -73,20 +73,20 @@
                                     <div class="header-product__line">
                                         <h1 class="header-product__title">Нож Снегирь</h1>
                                         <div class="header-product__actions">
-                                            <a href="" class="header-product__link _icon-compare"></a>
-                                            <a href="" class="header-product__link _icon-favourite"></a>
+                                            <a href="#" class="header-product__link _icon-compare"></a>
+                                            <a href="#" class="header-product__link _icon-favourite"></a>
                                         </div>
                                     </div>
                                     <div class="header-product__rating rating">
                                         <div class="rating__body">
-                                          <div class="rating__active"></div>
-                                          <div class="rating__items">
-                                            <input type="radio" class="rating__item" value="1" name="rating">
-                                            <input type="radio" class="rating__item" value="2" name="rating">
-                                            <input type="radio" class="rating__item" value="3" name="rating">
-                                            <input type="radio" class="rating__item" value="4" name="rating">
-                                            <input type="radio" class="rating__item" value="5" name="rating">
-                                          </div>
+                                            <div class="rating__active"></div>
+                                            <div class="rating__items">
+                                                <input type="radio" class="rating__item" value="1" name="rating">
+                                                <input type="radio" class="rating__item" value="2" name="rating">
+                                                <input type="radio" class="rating__item" value="3" name="rating">
+                                                <input type="radio" class="rating__item" value="4" name="rating">
+                                                <input type="radio" class="rating__item" value="5" name="rating">
+                                            </div>
                                         </div>
                                         <div hide class="rating__value">3.6</div>
                                     </div>
@@ -103,9 +103,35 @@
                                     <div class="table-product__value">38</div>
                                 </div>
                                 <div class="body-product__options options-product">
-                                    <div class="options-product__label">Сталь</div>
-                                    <div class="options-product__value">
-                                        <select name="steel" id="" class="options-product__select">
+                                    <div class="options-product__item">
+                                        <div class="options-product__label">Сталь</div>
+                                        <div class="options-product__value select__steel">
+                                            <select name="steel" class="options-product__select">
+                                                <option value="1" selected>Выбрать сталь</option>
+                                                <option value="1">100Х13М</option>
+                                                <option value="2">110Х18М-ШД</option>
+                                                <option value="3">40Х10С2М (ЭИ-107)</option>
+                                                <option value="4">50Х14МФ</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="options-product__item">
+                                        <div class="options-product__label">Рукоять</div>
+                                        <div class="options-product__value select__steel">
+                                            <select name="steel" class="options-product__select">
+                                                <option value="1" selected>Выбрать рукоять</option>
+                                                <option value="1">100Х13М</option>
+                                                <option value="2">110Х18М-ШД</option>
+                                                <option value="3">40Х10С2М (ЭИ-107)</option>
+                                                <option value="4">50Х14МФ</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                <div class="options-product__item">
+                                    <div class="options-product__label">Гарда и тыльник</div>
+                                    <div class="options-product__value select__steel">
+                                        <select name="steel" class="options-product__select">
+                                            <option value="1" selected>Выбрать гарда и тыльник</option>
                                             <option value="1">100Х13М</option>
                                             <option value="2">110Х18М-ШД</option>
                                             <option value="3">40Х10С2М (ЭИ-107)</option>
@@ -113,8 +139,21 @@
                                         </select>
                                     </div>
                                 </div>
+                                <div class="options-product__item">
+                                    <div class="options-product__label">Обработка клинка</div>
+                                    <div class="options-product__value select__steel">
+                                        <select name="steel" class="options-product__select">
+                                            <option value="1" selected>Выбрать обработку клинка</option>
+                                            <option value="1">100Х13М</option>
+                                            <option value="2">110Х18М-ШД</option>
+                                            <option value="3">40Х10С2М (ЭИ-107)</option>
+                                            <option value="4">50Х14МФ</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                </div>
                                 <div class="body-product__actions actions-product">
-                                    <div class="actions-product__price _icon-rub">3 865</div>
+                                    <div class="actions-product__price"><span class="_icon-rub"> 3 865</span> </div>
                                     <div class="actions-product__row">
                                         <div class="actions-product__quantity quantity">
                                             <button class="quantity__button quantity__button_minus"></button>
@@ -134,10 +173,10 @@
                         </div>
                         <div data-tabs="992" class="product__info product-info">
                             <nav data-tabs-titles class="product-info__navigation">
-                                <button tybe="submit" class="product-info__title _tab-active">Описание</button>
-                                <button tybe="submit" class="product-info__title">Характеристика</button>
-                                <button tybe="submit" class="product-info__title">Отзывы</button>
-                                <button tybe="submit" class="product-info__title">Доставка</button>
+                                <button type="submit" class="product-info__title _tab-active">Описание</button>
+                                <button type="submit" class="product-info__title">Характеристика</button>
+                                <button type="submit" class="product-info__title">Отзывы</button>
+                                <button type="submit" class="product-info__title">Доставка</button>
                             </nav>
                             <div data-tabs-body class="product-info__content">
                                     <div  class="product-info__body">
@@ -161,11 +200,32 @@
                                             <div class="product-info__column product-info-column">
                                                 <h4 class="product-info-column__title">Технические характеристики</h4>
                                                 <div class="product-info-column__table">
-                                                    
+                                                    <div class="product-info-column__label">Общая длина, мм:</div>
+                                                    <div class="product-info-column__value">227</div>
+                                                    <div class="product-info-column__label">Длина клинка, мм:</div>
+                                                    <div class="product-info-column__value">112</div>
+                                                    <div class="product-info-column__label">Ширина клинка, мм:</div>
+                                                    <div class="product-info-column__value">24</div>
+                                                    <div class="product-info-column__label">Толщина обуха, мм:</div>
+                                                    <div class="product-info-column__value">2.9</div>
                                                 </div>
                                             </div>
-                                            <div class="product-info__column"></div>
-                                            <div class="product-info__column"></div>
+                                            <div class="product-info__column product-info-column">
+                                                <h4 class="product-info-column__title">Используемые материалы</h4>
+                                                <div class="product-info-column__table">
+                                                    <div class="product-info-column__label">Сталь:</div>
+                                                    <div class="product-info-column__value">95Х18</div>
+                                                    <div class="product-info-column__label">Рукоять:</div>
+                                                    <div class="product-info-column__value">Накладки карельская береза</div>
+                                                </div>
+                                            </div>
+                                            <div class="product-info__column product-info-column">
+                                                <h4 class="product-info-column__title">Производство</h4>
+                                                <div class="product-info-column__table">
+                                                    <div class="product-info-column__label">Производство:</div>
+                                                    <div class="product-info-column__value">АиР</div>
+                                                </div>
+                                            </div>
                                         </div>
                                     </div>
                                     <div class="product-info__body ">
@@ -175,10 +235,28 @@
                                         <button class="product-info__button button button_black">Написать отзыв</button>
                                     </div>
                                     <div class="product-info__body">
-                                        <p>
-                                            Монтаж рукояти накладной плашечный. На навершии рукояти, функцию которого выполняет выступающий из под плашек хвостовик, 
-                                            имеется отверстие под темляк. Этот нож удобный помощник при работе с продуктами и охоте на боровую и водоплавающую дичь.
-                                        </p>
+                                        <div class="product-info__options">
+                                            <div class="options-product-info__item options-product__item">
+                                                <div class="options-product__label">Ваша страна</div>
+                                                <div class="options-product__value select__steel">
+                                                    <select name="country" class="options-product__select">
+                                                        <option value="1" selected>Россия</option>
+                                                        <option value="2">Беларусь</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                            <div class="options-product-info__item options-product__item">
+                                                <div class="options-product__label">Ваш город</div>
+                                                <div class="options-product__value select__steel">
+                                                    <select name="country" class="options-product__select">
+                                                        <option value="1" selected>Москва</option>
+                                                        <option value="2">Санкт-Петербург</option>
+                                                        <option value="2">Казань</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                        </div>
+
                                     </div>
                             </div>
                                 

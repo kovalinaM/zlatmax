@@ -161,6 +161,59 @@
 			}
 		}
 	}
+
+	&__steel{
+		.select__title {
+			border: 1px solid rgba(4, 4, 4, 0.3);
+			border-radius: rem(3);
+			color: rgba(20, 20, 20, 0.5);
+		}
+
+		.select__options {
+			margin-top: rem(15);
+		}
+
+		.select__value {
+			height: rem(40);
+			font-weight: 500;
+			font-size: rem(16);
+			line-height: percent(20, 16);
+			position: relative;
+			min-width: rem(320);
+			&::after {
+				content: "\e901";
+				@extend %ic;
+				position: absolute;
+				top: rem(15);
+				right: rem(12);
+				font-size: rem(10);
+				margin-left: em(10, 8);
+				color: $mainOrange;
+				z-index: 6;
+			}
+			&::before {
+				content: "";
+				position: absolute;
+				width: rem(40);
+				height: rem(40);
+				background-color: #000;
+				right: 0;
+				top: 0;
+				z-index: 5;
+				border: 1 ps solid #000;
+				border-radius: 0 rem(3) rem(3) 0;
+			}
+		}
+		
+		.select__option {
+			opacity: 0.5;
+			@media(any-hover: hover) {
+				&:hover {
+					opacity: 1;
+				}
+			}
+		}
+	}
 }
 
 // Тег
